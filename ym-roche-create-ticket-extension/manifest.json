@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "YM Roche Extenstion",
+    "version": "1.0.0",
+    "description": "A Support Extension to increase the Chatbot usability",
+    "icons": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    },
+    "page_action": {
+        "default_icon": "icon16.png",
+        "default_title": "YM Roche Extension"
+    },
+    "background": {
+        "scripts": ["event-page.js"],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://app.yellowmessenger.com/api/chat/demo/*"],
+            "js": ["content-script.js"]
+        }
+    ],
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "contextMenus",
+        "https://app.yellowmessenger.com/api/chat/demo/*"
+    ]
+}
